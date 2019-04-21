@@ -11,5 +11,5 @@ cache:
 
 script:
   - docker build -t chiragsane/node-web-app:1.0.0 .
-  - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+  - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker push chiragsane/node-web-app:1.0.0
