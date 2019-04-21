@@ -1,0 +1,12 @@
+const express = require('express');
+const app = express();
+
+const morgan = require('morgan');
+app.use(morgan('combined'));
+
+const responseString = 'APIs hosted successfully!';
+app.get('/', (req, res) => res.send(responseString));
+
+app.listen(3000, () => console.log('Server started on port 3000'));
+
+module.exports = app;
