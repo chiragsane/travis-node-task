@@ -17,5 +17,6 @@ script:
   - docker build -t chiragsane/node-web-app:$version .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker push chiragsane/node-web-app:$version
+  - pip install --upgrade pip
   - pip install awscli
   - aws ec2 describe-instances
