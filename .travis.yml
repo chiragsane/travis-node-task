@@ -17,5 +17,5 @@ script:
   - docker build -t chiragsane/node-web-app:$version .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker push chiragsane/node-web-app:$version
-  - pip install --user awscli
-  - aws cloudformation update-stack --stack-name $STACK_NAME --use-previous-template --parameter ParameterKey=Version,ParameterValue=$version --region eu-west-1
+  # - pip install --user awscli
+  # - aws cloudformation update-stack --stack-name $STACK_NAME --use-previous-template --parameter ParameterKey=Version,ParameterValue=$version --region eu-west-1
