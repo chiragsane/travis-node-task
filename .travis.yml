@@ -11,9 +11,12 @@ cache:
 
 before_script:
   - npm test
+  - ./aws_credentials.sh
 
 script:
   - version=`cat VERSION`
   - docker build -t chiragsane/node-web-app:$version .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
   - docker push chiragsane/node-web-app:$version
+  - pip install awscli
+  - aws ec2 describe-instances
