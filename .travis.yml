@@ -13,6 +13,7 @@ before_script:
   - npm test
 
 script:
-  - docker build -t chiragsane/node-web-app:1.0.0 .
+  - version=`cat VERSION`
+  - docker build -t chiragsane/node-web-app:$version .
   - docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASSWORD"
-  - docker push chiragsane/node-web-app:1.0.0
+  - docker push chiragsane/node-web-app:$version
