@@ -4,7 +4,7 @@ const app = express();
 const morgan = require('morgan');
 app.use(morgan('combined'));
 
-const responseString = 'v0.2.0 APIs hosted successfully!';
+const responseString = 'v0.3.0 APIs hosted successfully!';
 app.get('/', (req, res) => res.send(responseString));
 
 app.listen(3000, () => console.log('Server started on port 3000'));
