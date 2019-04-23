@@ -5,7 +5,7 @@ const app = require('../app');
 
 chai.use(chaiHttp);
 
-const responseString = 'v0.3.0 APIs hosted successfully!';
+const responseString = 'v0.3.1 APIs hosted successfully!';
 describe('test GET method', () => {
   it('should return correct response', () => {
     chai.request(app)
